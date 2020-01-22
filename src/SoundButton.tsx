@@ -46,7 +46,7 @@ export default function SoundButton({ source, prompt}: Props) {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   prompt: {
     position: 'absolute',
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   button: {
-    width: 200,
-    height: 200
+    height: 175,
+    width: 175
   }
 });

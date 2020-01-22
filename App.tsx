@@ -1,19 +1,21 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, SafeAreaView } from 'react-native';
 import SoundButton from './src/SoundButton';
 
 export default function App() {
   const sounds = [
     { source: require('./assets/sounds/airhorn.wav'), prompt: "Airhorn" },
     { source: require('./assets/sounds/record-scratch.wav'), prompt: "Record scratch" },
+    { source: require('./assets/sounds/rimshot.wav'), prompt: "Rimshot" },
+    { source: require('./assets/sounds/register.wav'), prompt: "Cash Register" },
   ];
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {sounds.map(({source, prompt}) =>
         <SoundButton key={source} source={source} prompt={prompt} />
       )}
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -23,5 +25,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-  },
+    flexDirection: Platform.OS === 'web' ? 'row' : 'column'
+   },
 });
