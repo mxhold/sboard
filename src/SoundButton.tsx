@@ -12,6 +12,7 @@ export default function SoundButton({ source, prompt}: Props) {
   const onPress = async () => {
     const sound = new Audio.Sound();
     try {
+      await Audio.setAudioModeAsync({ playsInSilentModeIOS: true })
       await sound.loadAsync(source);
       await sound.playAsync();
     } catch (error) {
