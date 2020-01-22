@@ -10,7 +10,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      {sounds.map(({source, prompt}) => 
+      {sounds.map(({source, prompt}) =>
         <SoundButton key={source} source={source} prompt={prompt} />
       )}
     </View>
@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
   },
 });
