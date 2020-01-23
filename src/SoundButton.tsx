@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
-import { Audio } from 'expo-av';
-import { Image, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
-import { PlaybackSource } from 'expo-av/build/AV';
+import React, { useState } from "react";
+import { Audio } from "expo-av";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  View
+} from "react-native";
+import { PlaybackSource } from "expo-av/build/AV";
 
 type Props = {
-  source: PlaybackSource
-  prompt: string
-}
+  source: PlaybackSource;
+  prompt: string;
+};
 
-export default function SoundButton({ source, prompt}: Props) {
+export default function SoundButton({ source, prompt }: Props) {
   const [isDepressed, setIsDepressed] = useState(false);
 
   const onPress = async () => {
@@ -18,15 +24,15 @@ export default function SoundButton({ source, prompt}: Props) {
       await sound.loadAsync(source);
       await sound.playAsync();
     } catch (error) {
-      alert('Error playing sound: ' + error);
+      alert("Error playing sound: " + error);
     }
-  }
+  };
 
   let imageSource;
   if (isDepressed) {
-    imageSource = require('../assets/button-pressed.png');
+    imageSource = require("../assets/button-pressed.png");
   } else {
-    imageSource = require('../assets/button.png');
+    imageSource = require("../assets/button.png");
   }
 
   return (
@@ -45,13 +51,13 @@ export default function SoundButton({ source, prompt}: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center"
   },
   prompt: {
-    position: 'absolute',
-    color: '#fff',
-    fontSize: 20,
+    position: "absolute",
+    color: "#fff",
+    fontSize: 20
   },
   button: {
     height: 175,

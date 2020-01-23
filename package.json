@@ -5,7 +5,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "format": "prettier '**/*.{js,json,md,ts,tsx,yml}' --write"
   },
   "dependencies": {
     "expo": "~36.0.0",
@@ -22,6 +23,7 @@
     "@types/react-native": "~0.60.23",
     "babel-preset-expo": "~8.0.0",
     "expo-cli": "^3.11.7",
+    "prettier": "1.19.1",
     "typescript": "~3.6.3"
   },
   "private": true
