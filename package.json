@@ -6,8 +6,10 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "format": "prettier '**/*.{js,json,md,ts,tsx,yml}' --write",
-    "precommit": "yarn run format && yarn run tsc"
+    "format": "prettier '**/*.{js,json,md,ts,tsx,yml}'",
+    "format.check": "yarn run format --check",
+    "format.write": "yarn run format --write",
+    "precommit": "yarn run format.check && yarn run tsc"
   },
   "dependencies": {
     "expo": "~36.0.0",
