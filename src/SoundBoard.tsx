@@ -1,5 +1,5 @@
 import React from "react";
-import { Platform, StyleSheet } from "react-native";
+import { Platform, StyleSheet, ScrollView } from "react-native";
 import SoundButton from "./SoundButton";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -19,9 +19,11 @@ export default function SoundBoard() {
 
   return (
     <SafeAreaView style={styles.container}>
-      {sounds.map(({ source, prompt }) => (
-        <SoundButton key={source} source={source} prompt={prompt} />
-      ))}
+      <ScrollView>
+        {sounds.map(({ source, prompt }) => (
+          <SoundButton key={source} source={source} prompt={prompt} />
+        ))}
+      </ScrollView>
     </SafeAreaView>
   );
 }
