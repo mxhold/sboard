@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
   button: {
-    height: 175,
-    width: 175
+    height: 150,
+    width: 150,
+    marginBottom: 5
   }
 });
