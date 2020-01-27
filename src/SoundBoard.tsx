@@ -1,7 +1,6 @@
 import React from "react";
-import { Platform, StyleSheet, ScrollView } from "react-native";
 import SoundButton from "./SoundButton";
-import { SafeAreaView } from "react-native-safe-area-context";
+import Container from "./Container";
 
 export default function SoundBoard() {
   const sounds = [
@@ -18,20 +17,10 @@ export default function SoundBoard() {
   ];
 
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView>
-        {sounds.map(({ source, prompt }) => (
-          <SoundButton key={source} source={source} prompt={prompt} />
-        ))}
-      </ScrollView>
-    </SafeAreaView>
+    <Container>
+      {sounds.map(({ source, prompt }) => (
+        <SoundButton key={source} source={source} prompt={prompt} />
+      ))}
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: Platform.OS === "web" ? "row" : "column",
-    justifyContent: "space-evenly"
-  }
-});
