@@ -9,7 +9,7 @@ const Container: React.FC<{}> = ({ children }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>{children}</ScrollView>
+      <ScrollView alwaysBounceVertical={false}>{children}</ScrollView>
     </SafeAreaView>
   );
 };
