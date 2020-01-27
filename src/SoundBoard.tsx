@@ -28,6 +28,8 @@ export default function SoundBoard() {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: Platform.OS === "web" ? "row" : "column"
+    flex: 1,
+    flexDirection: Platform.OS === "web" ? "row" : "column",
+    justifyContent: "space-evenly"
   }
 });
